@@ -1,0 +1,198 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Upcoming Exams</h4>
+        </div>
+        <div class="pb-2 mr-2" style="margin-left: 12px;">
+          <span
+            onclick="exportToExcel('exam', 'Please wait. Table is still loading. Click this after table is loaded.')"
+            data-bs-toggle="tooltip" data-bs-placement="right" title=""
+            class="btn form-btn btn-secondary hover-boxshadow cursor-pointer hover-moveup"
+            data-bs-original-title="You can control what you want to export to Excel before clicking this. For example, if you wish to export all the records, click &quot;Show All&quot; at the drop-down button below before clicking &quot;Export to Excel.&quot;"><i
+              class="fa-solid fa-file-excel pe-1"></i> Export to Excel</span>
+          <span onclick="exportToPdf('exam', 'Please wait. Table is still loading. Click this after table is loaded.')"
+            data-bs-toggle="tooltip" data-bs-placement="right" title=""
+            class="btn form-btn btn-secondary hover-boxshadow cursor-pointer hover-moveup"
+            data-bs-original-title="You can control what you want to export to PDF before clicking this. For example, if you wish to export all the records, click &quot;Show All&quot; at the drop-down button below before clicking &quot;Export to PDF.&quot;"><i
+              class="fa-solid fa-file-pdf pe-1"></i> Export to Pdf</span>
+        </div>
+        <div class="card-body">
+          <div class="toolbar"></div>
+          <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row mb-2 pagination-dropdown-search">
+              <div class="col-7">
+                  <app-pagination-dropdown (pageSizeChanged)="onPageSizeChange($event)"></app-pagination-dropdown>
+              </div>
+              <div class="col-5">
+                  <app-table-search-input (childEmitter)="eventFired($event)"></app-table-search-input>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-sm-12">
+                <table cellspacing="0" class="table table-striped table-bordered dataTable" id="datatable" width="100%"
+                  role="grid" aria-describedby="datatable_info" style="width: 100%;">
+                  <thead>
+                    <tr role="row">
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Name: activate to sort column ascending" style="width: 234px;">Name</th>
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Position: activate to sort column ascending" style="width: 178px;">Start Date & Time
+                      </th>
+                      <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Office: activate to sort column descending" style="width: 201px;"
+                        aria-sort="ascending">End Date & Time</th>
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Age: activate to sort column ascending" style="width: 102px;">Duration (minutes)
+                      </th>
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Date: activate to sort column ascending" style="width: 128px;">Total Questions</th>
+                      <th class="disabled-sorting text-right sorting" tabindex="0" aria-controls="datatable" rowspan="1"
+                        colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 187px;">
+                        Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td class="">Michelle House</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Paul Byrd</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Prescott Bartlett</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Quinn Flynn</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Suki Burks</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Tiger Nixon</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Timothy Mooney</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Unity Butler</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Vivian Harrell</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Yuri Berry</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">Marketing</td>
+                      <td class="">2013</td>
+                      <td class="">49,990</td>
+                      <td class="text-right"><a class="btn btn-info btn-link btn-icon btn-sm like"
+                          href="javascript:void(0)"><i class="fa fa-heart"></i></a><a
+                          class="btn btn-warning btn-link btn-icon btn-sm edit" href="javascript:void(0)"><i
+                            class="fa fa-edit"></i></a><a class="btn btn-danger btn-link btn-icon btn-sm remove"
+                          href="javascript:void(0)"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <app-pagination-summary class="col-7 dataTables_info" 
+              [startNumber]="config.currentPage" [totalItems]="config.totalItems" [endNumber]="config.itemsPerPage">
+            </app-pagination-summary>
+
+            <app-pagination-controls class="col-5 dataTables_paginate paging_simple_numbers"
+               [config]="config"
+              (onPgeChangedEvent)="onPageChange($event)">
+            </app-pagination-controls>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

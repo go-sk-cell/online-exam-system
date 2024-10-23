@@ -1,0 +1,112 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Login History</h4>
+        </div>
+        <div class="card-body">
+          <div class="toolbar"></div>
+          <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row mb-2">
+              <div class="col-7">
+                  <app-pagination-dropdown (pageSizeChanged)="onPageSizeChange($event)"></app-pagination-dropdown>
+              </div>
+              <div class="col-5">
+                  <app-table-search-input (childEmitter)="eventFired($event)"></app-table-search-input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <table cellspacing="0" class="table table-striped table-bordered dataTable" id="datatable" width="100%"
+                  role="grid" aria-describedby="datatable_info" style="width: 100%;">
+                  <thead>
+                    <tr role="row">
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Name: activate to sort column ascending" style="width: 234px;">UserName</th>
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Position: activate to sort column ascending" style="width: 178px;">Full Name</th>
+                      <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                        aria-label="Age: activate to sort column ascending" style="width: 102px;">Login Date Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td class="">Michelle House</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Paul Byrd</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Prescott Bartlett</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Quinn Flynn</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Suki Burks</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Tiger Nixon</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Timothy Mooney</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                     
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Unity Butler</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                     
+                    </tr>
+                    <tr role="row" class="odd">
+                      <td class="">Vivian Harrell</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                   
+                    </tr>
+                    <tr role="row" class="even">
+                      <td class="">Yuri Berry</td>
+                      <td class="">Mike Monday</td>
+                      <td class="sorting_1">21/10/2024,8:08 AM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <app-pagination-summary class="col-7 dataTables_info" 
+              [startNumber]="config.currentPage" [totalItems]="config.totalItems" [endNumber]="config.itemsPerPage">
+            </app-pagination-summary>
+
+            <app-pagination-controls class="col-5 dataTables_paginate paging_simple_numbers"
+               [config]="config"
+              (onPgeChangedEvent)="onPageChange($event)">
+            </app-pagination-controls>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
